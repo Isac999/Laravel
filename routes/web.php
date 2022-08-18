@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return "Welcome to homepage!";
-});
+Route::get('/', [\App\Http\Controllers\HomepageController::class, 'homepage']);
 
 Route::get('/login', [\App\Http\Controllers\LoginController::class, 'login']);
 

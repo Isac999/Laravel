@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     public function admin() {
-        echo "Admin user page!";
+        return view('site.admin');
     }
 }
