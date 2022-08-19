@@ -17,7 +17,7 @@ Route::get('/', [\App\Http\Controllers\HomepageController::class, 'homepage'])->
 
 Route::get('/login', [\App\Http\Controllers\LoginController::class, 'login'])->name('site.login');
 
-Route::get('login/{nome}/{comentario}', [\App\Http\Controllers\LoginController::class, 'param']);
+Route::get('mensagem/{nome}/{comentario}', [\App\Http\Controllers\MensagemController::class, 'param']);
 
 Route::prefix('/app')->group(function() {
     Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'admin'])->name('app.admin');
