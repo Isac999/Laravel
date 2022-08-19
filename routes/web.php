@@ -17,8 +17,15 @@ Route::get('/', [\App\Http\Controllers\HomepageController::class, 'homepage'])->
 
 Route::get('/login', [\App\Http\Controllers\LoginController::class, 'login'])->name('site.login');
 
+Route::get('login/{nome}/{comentario}', [\App\Http\Controllers\LoginController::class, 'param']);
+
 Route::prefix('/app')->group(function() {
     Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'admin'])->name('app.admin');
+});
+
+Route::fallback(function() {
+    echo "Página não encontrada! <br/>";
+    echo "<a href='".route('site.index')."'> Clique aqui para voltar para a página inicial. </a>";
 });
 
 /*
@@ -27,6 +34,8 @@ Route::get('/login/{nome}/{mensagem?}', function (string $nome, string $mensagem
     echo "Seja bem-vindo ".$nome."<br/>";
     echo "Essa é sua mensagem: ".$mensagem;
 });
+
+Route::redirect('paginaOrigem', 'paginaDestino');
 */
 /*
 Ao colocar a '?' após a variavel ela será uma variavel opcional;
