@@ -10,3 +10,8 @@
         <a href="{{ route('app.admin') }}"> Admin </a>
     </li>
 </ul>
+
+{{-- Comentários blade --}}
+@php 
+    echo "Rodando php pelo blade";
+@endphp
