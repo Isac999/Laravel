@@ -6,7 +6,7 @@
     <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="sass.html"> Sobre-nós </a></li>
         <li><a href="badges.html">Contato</a></li>
-        <li><a href="collapsible.html">Login</a></li>
+        <li><a href="{{ route('site.login') }}">Login</a></li>
     </ul>
     </div>
 </nav>
