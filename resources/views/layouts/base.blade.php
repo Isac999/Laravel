@@ -16,9 +16,9 @@
     </style>
 </head>
 <body>
-    @yield('header')
+    @include('layouts.header')
     @yield('main')
-    @yield('footer')
+    @include('layouts.footer')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
