@@ -16,9 +16,10 @@
     </style>
 </head>
 <body>
-    @include('layouts.header')
+    @include('layouts.header') <!--adição por include-->
     @yield('main')
-    @include('layouts.footer')
+    @component('layouts.footer') <!--adição por componente-->
+    @endcomponent
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>

@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [\App\Http\Controllers\HomepageController::class, 'homepage'])->name('site.index');
 
 Route::get('/login', [\App\Http\Controllers\LoginController::class, 'login'])->name('site.login');
+Route::post('/login', [\App\Http\Controllers\LoginController::class, 'login'])->name('site.login');
 
 Route::get('mensagem/{nome}/{comentario}', [\App\Http\Controllers\MensagemController::class, 'param']);
 

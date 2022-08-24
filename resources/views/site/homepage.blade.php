@@ -27,4 +27,5 @@
         </li>
     </ul>
 </section>
+<br>
 @endsection
