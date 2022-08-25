@@ -13,7 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('logins', function (Blueprint $table) {
+            $table->string('testNewColumn', 20);
+        });
     }
 
     /**
