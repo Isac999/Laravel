@@ -14,7 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::table('logins', function (Blueprint $table) {
+            //alterando registro em logins
             $table->string('testNewColumn', 20);
+            //modificador permitindo valores nulls
+            $table->string('testNewColumn02', 20)->nullable();
+            //modificador default
+            $table->string('testNewColumn03', 20)->default('Ola');
         });
     }
 
@@ -25,6 +30,8 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        //fazer o rollback
+        //$table->dropColumn(['tesNewColumn', 'param2', 'etc..']);
+        $table->dropColumn('tesNewColumn');
     }
 };
