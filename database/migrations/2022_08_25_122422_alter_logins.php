@@ -41,7 +41,7 @@ return new class extends Migration
         Schema::table('logins', function (Blueprint $table) {
             //fazer o rollback
             //$table->dropColumn(['tesNewColumn', 'param2', 'etc..']);
-            $table->dropColumn('tesNewColumn');     
+            $table->dropColumn(['testNewColumn', 'testNewColumn02', 'testNewColumn03']);     
         });
     }
 
