@@ -20,10 +20,14 @@ return new class extends Migration
             $table->string('testNewColumn02', 20)->nullable();
             //modificador default
             $table->string('testNewColumn03', 20)->default('Ola');
+            //adicionar uma coluna aṕos a outra 
+            $table->float('peso')->after('tesNewColumn');
 
             //Chave estrangeira
             //$table->unsignedBigInteger('nome_chave_estrangeira');
             //$table->foreign('nome_chave_estrangeira')->references('chave_primaria')->on('nomeDaTabelaOndeTemosAChavePrimaria');
+
+
         });
     }
 
@@ -34,8 +38,11 @@ return new class extends Migration
      */
     public function down()
     {
-        //fazer o rollback
-        //$table->dropColumn(['tesNewColumn', 'param2', 'etc..']);
-        $table->dropColumn('tesNewColumn');
+        Schema::table('logins', function (Blueprint $table) {
+            //fazer o rollback
+            //$table->dropColumn(['tesNewColumn', 'param2', 'etc..']);
+            $table->dropColumn('tesNewColumn');     
+        });
     }
+
 };
