@@ -15,9 +15,16 @@ class LoginSeeder extends Seeder
      */
     public function run()
     {
+        //insert01
         $login = new Login();
         $login->email = 'first@gmail.com';
         $login->password = 'casalonge0930';
         $login->save();
+
+        //insert02
+        Login::create([
+            'email' => 'second@hotmail.com',
+            'password' => 'user03235300'
+        ]);
     }
 }
