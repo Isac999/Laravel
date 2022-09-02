@@ -19,7 +19,7 @@ class LoginController extends Controller
         $login->save();
         */
 
-        //caso a validação do post não seja atendida com os dados, haverá um redirecionamento para a rota anterior
+        //caso a validação do post não seja atendida com os padrões dos dados, haverá um redirecionamento para a rota anterior
         $request->validate([
             'email' => 'required|email|min:8',
             'password' => 'required|min:6|max:25'
