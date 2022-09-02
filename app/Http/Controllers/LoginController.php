@@ -18,6 +18,12 @@ class LoginController extends Controller
         $login->password = $request->input('password');
         $login->save();
         */
+
+        //caso a validação do post não seja atendida com os dados, haverá um redirecionamento para a rota anterior
+        $request->validate([
+            'email' => 'required',
+            'password' => 'required'
+        ]);
         Login::create($request->all());
         return view('site.login');
     }
