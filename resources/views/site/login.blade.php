@@ -21,6 +21,7 @@
               <div class='input-field col s12'>
                 <input class='validate' type='email' name='email' id='email' />
                 <label for='email'>Enter your email</label>
+                {{ $errors->has('email') ? $errors->first('email') : ''}}
               </div>
             </div>
 
@@ -28,6 +29,7 @@
               <div class='input-field col s12'>
                 <input class='validate' type='password' name='password' id='password' />
                 <label for='password'>Enter your password</label>
+                {{ $errors->has('password') ? $errors->first('password') : ''}}
               </div>
               <label style='float: right;'>
 								<a class='pink-text' href='#!'><b>Forgot Password?</b></a>
