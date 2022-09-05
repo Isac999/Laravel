@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\LogAcessoMiddleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [\App\Http\Controllers\HomepageController::class, 'homepage'])->name('site.index');
+Route::get('/', [\App\Http\Controllers\HomepageController::class, 'homepage'])
+    ->name('site.index')
+    ->middleware('LogAcessoMiddleware');
 
 Route::get('/login', [\App\Http\Controllers\LoginController::class, 'login'])->name('site.login');
 Route::post('/login', [\App\Http\Controllers\LoginController::class, 'insert'])->name('site.login');
