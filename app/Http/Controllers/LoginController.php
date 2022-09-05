@@ -21,7 +21,7 @@ class LoginController extends Controller
 
         //caso a validação do post não seja atendida com os padrões dos dados, haverá um redirecionamento para a rota anterior
         $request->validate([
-            'email' => 'required|email|min:8',
+            'email' => 'required|email|min:8|unique:logins',
             'password' => 'required|min:6|max:25'
         ]);
         Login::create($request->all());
