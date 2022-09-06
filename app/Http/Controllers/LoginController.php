@@ -6,10 +6,11 @@ use Illuminate\Http\Request;
 use App\Models\Login;
 
 class LoginController extends Controller
-{
+{   
     public function login() {
         return view('site.login');
     }
+
     public function insert(Request $request) {
         //print_r($request->all());
         /*
