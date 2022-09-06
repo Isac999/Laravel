@@ -10,7 +10,9 @@ Route::get('/', [\App\Http\Controllers\HomepageController::class, 'homepage'])
     ->middleware(LogAcessoMiddleware::class);
 */
 
-Route::get('/', [\App\Http\Controllers\HomepageController::class, 'homepage'])->name('site.index')->middleware('log.acesso');
+Route::get('/', [\App\Http\Controllers\HomepageController::class, 'homepage'])
+->name('site.index')
+->middleware('log.acesso');
 
 Route::get('/login', [\App\Http\Controllers\LoginController::class, 'login'])->name('site.login');
 Route::post('/login', [\App\Http\Controllers\LoginController::class, 'insert'])->name('site.login');
