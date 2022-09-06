@@ -18,7 +18,9 @@ Route::post('/login', [\App\Http\Controllers\LoginController::class, 'insert'])-
 Route::get('mensagem/{nome}/{comentario}', [\App\Http\Controllers\MensagemController::class, 'param']);
 
 Route::prefix('/app')->group(function() {
-    Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'admin'])->name('app.admin');
+    Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'admin'])
+    ->name('app.admin')
+    ->middleware('log.acesso','Autenticacao'); //encadeamento de middlewares
 });
 
 Route::fallback(function() {
