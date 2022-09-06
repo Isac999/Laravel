@@ -16,6 +16,10 @@ class AutenticacaoMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        if (!true) {
+            return $next($request);
+        } else {
+            return Response('Acesso negado!');
+        }
     }
 }
