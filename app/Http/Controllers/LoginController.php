@@ -21,14 +21,15 @@ class LoginController extends Controller
         */
 
         //caso a validação do post não seja atendida com os padrões dos dados, haverá um redirecionamento para a rota anterior
-        /*
         $request->validate([
             'email' => 'required|email|min:8|unique:logins',
             'password' => 'required|min:6|max:25'
         ]);
         Login::create($request->all());
         return view('site.login');
-        */
+    }
+
+    public function verificacao(Request $request) {
         $user = new Login();
 
         $email = $request->get('email');
@@ -43,6 +44,5 @@ class LoginController extends Controller
         } else {
             return redirect()->route('site.login');
         }
-        
     }
 }
