@@ -22,7 +22,7 @@ Route::get('mensagem/{nome}/{comentario}', [\App\Http\Controllers\MensagemContro
 Route::prefix('/app')->group(function() {
     Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'admin'])
     ->name('app.admin')
-    ->middleware('log.acesso','Autenticacao:parametro'); //encadeamento de middlewares
+    ->middleware('log.acesso','autenticacao:parametro'); //encadeamento de middlewares
 });
 
 Route::fallback(function() {
