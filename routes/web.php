@@ -20,6 +20,7 @@ Route::post('/login', [\App\Http\Controllers\LoginController::class, 'insert'])-
 Route::get('mensagem/{nome}/{comentario}', [\App\Http\Controllers\MensagemController::class, 'param']);
 
 Route::prefix('/app')->group(function() {
+    Route::get('/sair', [\App\Http\Controllers\AdminController::class, 'sair'])->name('app.sair');
     Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'admin'])
     ->name('app.admin')
     ->middleware('log.acesso','autenticacao:parametro'); //encadeamento de middlewares

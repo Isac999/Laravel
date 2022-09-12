@@ -9,6 +9,9 @@
     <li>
         <a href="{{ route('app.admin') }}"> Admin </a>
     </li>
+    <li>
+        <a href="{{ route('app.sair') }}"> Sair </a>
+    </li>
 </ul>
 
 {{-- Comentários blade --}}

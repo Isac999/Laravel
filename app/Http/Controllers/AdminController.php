@@ -17,4 +17,10 @@ class AdminController extends Controller
     public function admin() {
         return view('app.admin');
     }
+    public function sair() {
+        if(session_start()) {
+            session_destroy();
+        }
+        return redirect()->route('site.login');
+    }
 }
