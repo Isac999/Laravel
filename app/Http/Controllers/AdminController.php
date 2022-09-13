@@ -13,7 +13,6 @@ class AdminController extends Controller
         $this->middleware(LogAcessoMiddleware::class);
     }
     */
-
     public function admin() {
         return view('app.admin');
     }
