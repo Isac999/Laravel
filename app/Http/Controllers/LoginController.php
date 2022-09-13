@@ -29,7 +29,7 @@ class LoginController extends Controller
         return view('site.login');
     }
 
-    public function verificacao(Request $request) {
+    public function validacao(Request $request) {
         $user = new Login();
 
         $email = $request->get('email');
