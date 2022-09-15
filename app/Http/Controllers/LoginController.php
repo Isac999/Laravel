@@ -37,6 +37,7 @@ class LoginController extends Controller
 
         $usuario = $user->where('email', $email)->where('password', $password)->get()->first();
         print_r($usuario);
+        
         if (isset($usuario->email)) {
             session_start();
             $_SESSION['email'] = $usuario->email;
